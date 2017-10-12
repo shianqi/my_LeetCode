@@ -5,19 +5,19 @@
  * 
  * Example 1:
  * Input: 
- * 	Tree 1                     Tree 2                  
- *           1                         2                             
- *          / \                       / \                            
- *         3   2                     1   3                        
- *        /                           \   \                      
- *       5                             4   7                  
+ * Tree 1                     Tree 2                  
+ *         1                         2                             
+ *        / \                       / \                            
+ *       3   2                     1   3                        
+ *      /                           \   \                      
+ *     5                             4   7                  
  * Output: 
  * Merged tree:
- * 	     3
- * 	    / \
- * 	   4   5
- * 	  / \   \ 
- * 	 5   4   7
+ *     3
+ *    / \
+ *   4   5
+ *  / \   \ 
+ * 5   4   7
  * Note: The merging process must start from the root nodes of both trees.
  */
 
@@ -29,9 +29,9 @@
  * }
  */
 
-function TreeNode(val) {
-    this.val = val;
-    this.left = this.right = null;
+function TreeNode (val) {
+  this.val = val
+  this.left = this.right = null
 }
 
 /**
@@ -39,20 +39,20 @@ function TreeNode(val) {
  * @param {TreeNode} t2
  * @return {TreeNode}
  */
-var mergeTrees = function(t1, t2) {
-    var node = null;
-    if(t1||t2){
-        var val = (t1?t1.val:0) + (t2?t2.val:0);
-        node = new TreeNode(val);
-        node.left = mergeTrees(((t1&&t1.left)?t1.left: null), ((t2&&t2.left)?t2.left: null));
-        node.right = mergeTrees(((t1&&t1.right)?t1.right: null), ((t2&&t2.right)?t2.right: null));
-        return node;
-    }else{
-        return node;
-    }
-};
+var mergeTrees = function (t1, t2) {
+  var node = null
+  if (t1 || t2) {
+    var val = (t1 ? t1.val : 0) + (t2 ? t2.val : 0)
+    node = new TreeNode(val)
+    node.left = mergeTrees(((t1 && t1.left) ? t1.left : null), ((t2 && t2.left) ? t2.left : null))
+    node.right = mergeTrees(((t1 && t1.right) ? t1.right : null), ((t2 && t2.right) ? t2.right : null))
+    return node
+  } else {
+    return node
+  }
+}
 
-//Batter Way
+// Batter Way
 
 // var mergeTrees = function(t1, t2) {
 //     if (t1 === null) return t2
@@ -63,26 +63,25 @@ var mergeTrees = function(t1, t2) {
 //     return mergedTree
 // };
 
-//-------------------------------
+// -------------------------------
 
-var node1 = new TreeNode(1);
-var node2 = new TreeNode(3);
-var node3 = new TreeNode(2);
-var node4 = new TreeNode(5);
-var node5 = new TreeNode(2);
-var node6 = new TreeNode(1);
-var node7 = new TreeNode(3);
-var node8 = new TreeNode(4);
-var node9 = new TreeNode(7);
+var node1 = new TreeNode(1)
+var node2 = new TreeNode(3)
+var node3 = new TreeNode(2)
+var node4 = new TreeNode(5)
+var node5 = new TreeNode(2)
+var node6 = new TreeNode(1)
+var node7 = new TreeNode(3)
+var node8 = new TreeNode(4)
+var node9 = new TreeNode(7)
 
-node1.left = node2;
-node1.right = node3;
-node2.left = node4;
+node1.left = node2
+node1.right = node3
+node2.left = node4
 
-node5.left = node6;
-node5.right = node7;
-node6.right = node8;
-node7.right = node9;
+node5.left = node6
+node5.right = node7
+node6.right = node8
+node7.right = node9
 
-console.log(mergeTrees(node1, node5));
-
+console.log(mergeTrees(node1, node5))

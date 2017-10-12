@@ -16,16 +16,16 @@
  * @param {number[]} nums
  * @return {number[]}
  */
-var findDuplicates = function(nums) {
-    var obj = {}
-    var res = []
-    for(var i=0;i<nums.length;i++){
-        if(obj[nums[i]]==null){
-            obj[nums[i]] = 1
-        }else{
-            res.push(nums[i])
-        }
+var findDuplicates = function (nums) {
+  var obj = {}
+  var res = []
+  for (var i = 0; i < nums.length; i++) {
+    if (obj[nums[i]] == null) {
+      obj[nums[i]] = 1
+    } else {
+      res.push(nums[i])
     }
-    return res
-};
-console.log(findDuplicates([4,3,2,7,8,2,3,1]))
+  }
+  return res
+}
+console.log(findDuplicates([4, 3, 2, 7, 8, 2, 3, 1]))

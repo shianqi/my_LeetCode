@@ -5,18 +5,18 @@
  * Given s = "hello", return "olleh".
  */
 
- /**
+/**
  * @param {string} s
  * @return {string}
  * Runtime: 152 ms
  * Batter than: 62.19%
  */
-var reverseString = function(s) {
-    var resStr = ''
-    for(var j=s.length-1;j>=0;j--){
-        resStr += s[j];
-    }
-    return resStr;
-};
+var reverseString = function (s) {
+  var resStr = ''
+  for (var j = s.length - 1; j >= 0; j--) {
+    resStr += s[j]
+  }
+  return resStr
+}
 
-console.log(reverseString('hello'));
+console.log(reverseString('hello'))

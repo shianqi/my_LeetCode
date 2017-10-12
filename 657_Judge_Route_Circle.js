@@ -13,17 +13,16 @@
  * @param {string} moves
  * @return {boolean}
  */
-var judgeCircle = function(moves) {
-    var x = 0;
-    var y = 0;
-    for(var i=0;i<moves.length;i++){
-        if(moves[i]=="U"){y++;}
-        else if(moves[i]=="D"){y--;}else if(moves[i]=="L"){x--;}
-        else if(moves[i]=="R"){x++;}
-    }
-    if(x==0&&y==0){return true;}else{return false;}
-};
+var judgeCircle = function (moves) {
+  var x = 0
+  var y = 0
+  for (var i = 0; i < moves.length; i++) {
+    if (moves[i] === 'U') { y++ } else if (moves[i] === 'D') { y-- } else if (moves[i] === 'L') { x-- } else if (moves[i] === 'R') { x++ }
+  }
+  if (x === 0 && y === 0) { return true } else { return false }
+}
 
+console.log(judgeCircle('UD'))
 /**
  * Tips:
  * 代码空格越少，执行越快

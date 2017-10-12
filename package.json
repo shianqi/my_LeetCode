@@ -1,0 +1,27 @@
+{
+  "name": "my_leetcode",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shianqi/my_LeetCode.git"
+  },
+  "author": "shianqi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shianqi/my_LeetCode/issues"
+  },
+  "homepage": "https://github.com/shianqi/my_LeetCode#readme",
+  "devDependencies": {
+    "eslint": "^4.8.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^5.2.0",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1"
+  }
+}

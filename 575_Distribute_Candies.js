@@ -19,23 +19,23 @@
  * The number in given array is in range [-100,000, 100,000].
  */
 
- /**
+/**
  * @param {number[]} candies
  * @return {number}
  * Runtime: 715 ms
  * Batter than: 30.23%
  */
-var distributeCandies = function(candies) {
-    var obj = {};
-    for(var i=0;i<candies.length;i++){
-        var num = candies[i];
-        if(obj[num]==null){
-            obj[num] = true;
-        }
+var distributeCandies = function (candies) {
+  var obj = {}
+  for (var i = 0; i < candies.length; i++) {
+    var num = candies[i]
+    if (obj[num] == null) {
+      obj[num] = true
     }
-    var objLength = Object.keys(obj).length;
-    return objLength<candies.length/2?objLength:candies.length/2;
-};
+  }
+  var objLength = Object.keys(obj).length
+  return objLength < candies.length / 2 ? objLength : candies.length / 2
+}
 
-console.log(distributeCandies([1,1,2,2,3,3]));
-console.log(distributeCandies([1,1,2,3]));
+console.log(distributeCandies([1, 1, 2, 2, 3, 3]))
+console.log(distributeCandies([1, 1, 2, 3]))

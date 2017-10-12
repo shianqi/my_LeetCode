@@ -34,7 +34,7 @@
  * 
  */
 
- /**
+/**
  * @param {number[][]} nums
  * @param {number} r
  * @param {number} c
@@ -43,29 +43,29 @@
  * Runtime: 219 ms
  * Batter than 14.86%
  */
-var matrixReshape = function(nums, r, c) {
-    var size = 0;
-    for(var i=0;i<nums.length;i++){
-        size+=nums[i].length;
-    }
-    if(size!=r*c){
-        return nums;
-    }else{
-        var temp = [];
-        var res = [];
-        for(var i = 0;i<nums.length;i++){
-            var num = nums[i];
-            for(var j=0;j<num.length;j++){
-                temp.push(num[j]);
-                if(temp.length-c >= 0){
-                    res.push(temp);
-                    temp = [];
-                }
-            }
+var matrixReshape = function (nums, r, c) {
+  var size = 0
+  for (let i = 0; i < nums.length; i++) {
+    size += nums[i].length
+  }
+  if (size !== r * c) {
+    return nums
+  } else {
+    var temp = []
+    var res = []
+    for (let i = 0; i < nums.length; i++) {
+      var num = nums[i]
+      for (let j = 0; j < num.length; j++) {
+        temp.push(num[j])
+        if (temp.length - c >= 0) {
+          res.push(temp)
+          temp = []
         }
-        return res;
+      }
     }
-};
+    return res
+  }
+}
 
-console.log(matrixReshape([[1,2],[3,4]], 1, 4));
-console.log(matrixReshape([[1,2],[3,4]], 2, 4));
+console.log(matrixReshape([[1, 2], [3, 4]], 1, 4))
+console.log(matrixReshape([[1, 2], [3, 4]], 2, 4))

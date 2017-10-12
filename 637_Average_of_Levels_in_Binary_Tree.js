@@ -14,10 +14,9 @@
  *
  */
 
-
-function TreeNode(val) {
-    this.val = val;
-    this.left = this.right = null;
+function TreeNode (val) {
+  this.val = val
+  this.left = this.right = null
 }
 /**
  * Definition for a binary tree node.
@@ -30,25 +29,25 @@ function TreeNode(val) {
  * @param {TreeNode} root
  * @return {number[]}
  */
-var averageOfLevels = function(root) {
-    var stick = []
-    var res = []
-    stick.push(root)
-    while(stick.length!==0){
-        var temp = 0
-        var tempSize = 0
-        var _stick = stick.concat()
-        stick=[]
-        for(var i=0;i<_stick.length;i++){
-            temp+=_stick[i].val
-            tempSize++
-            if(_stick[i].left)stick.push(_stick[i].left)
-            if(_stick[i].right)stick.push(_stick[i].right)
-        }
-        res.push(temp/tempSize)
+var averageOfLevels = function (root) {
+  var stick = []
+  var res = []
+  stick.push(root)
+  while (stick.length !== 0) {
+    var temp = 0
+    var tempSize = 0
+    var _stick = stick.concat()
+    stick = []
+    for (var i = 0; i < _stick.length; i++) {
+      temp += _stick[i].val
+      tempSize++
+      if (_stick[i].left)stick.push(_stick[i].left)
+      if (_stick[i].right)stick.push(_stick[i].right)
     }
-    return res
-};
+    res.push(temp / tempSize)
+  }
+  return res
+}
 
 var node1 = new TreeNode(3)
 var node2 = new TreeNode(9)

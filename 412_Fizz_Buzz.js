@@ -27,31 +27,31 @@
  * ]
  */
 
- /**
+/**
  * @param {number} n
  * @return {string[]}
  * 
  * Runtime: 128 ms
  * Batter than 44.39%
  */
-var fizzBuzz = function(n) {
-    var arr = [];
-    for(var i=1;i<n+1;i++){
-        var res = i+"";
-        if(i%3==0){
-            res='Fizz';
-        }
-        if(i%5==0){
-            if(res=='Fizz'){
-                res = 'FizzBuzz';
-            }else{
-                res = 'Buzz';
-            }
-        }
-        arr[i-1] = res;
+var fizzBuzz = function (n) {
+  var arr = []
+  for (var i = 1; i < n + 1; i++) {
+    var res = i + ''
+    if (i % 3 === 0) {
+      res = 'Fizz'
     }
-    return arr;
-};
+    if (i % 5 === 0) {
+      if (res === 'Fizz') {
+        res = 'FizzBuzz'
+      } else {
+        res = 'Buzz'
+      }
+    }
+    arr[i - 1] = res
+  }
+  return arr
+}
 
 // /**
 //  * @param {number} n

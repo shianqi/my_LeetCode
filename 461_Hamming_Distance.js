@@ -20,7 +20,6 @@
 The above arrows point to positions where the corresponding bits are different.
  */
 
-
 //  /**
 //  * @param {number} x
 //  * @param {number} y
@@ -28,42 +27,42 @@ The above arrows point to positions where the corresponding bits are different.
 //  */
 // var hammingDistance = function(x, y) {
 //     var hamming = (x ^ y).toString(2).match(/1/g);
-    
+
 //     if (hamming) return hamming.length;
 //     else return 0;
 // };
 
- /**
+/**
  * @param {number} x
  * @param {number} y
  * @return {number}
  */
-var hammingDistance = function(x, y) {
-    var b;
-    var s;
-    if(x>y){
-        b = x.toString(2);
-        s = y.toString(2);
-    }else{
-        b = y.toString(2);
-        s = x.toString(2);
+var hammingDistance = function (x, y) {
+  var b
+  var s
+  if (x > y) {
+    b = x.toString(2)
+    s = y.toString(2)
+  } else {
+    b = y.toString(2)
+    s = x.toString(2)
+  }
+  var bl = b.length
+  var sl = s.length
+  var cl = b.slice(0, bl - sl)
+  var cr = b.slice(bl - sl, bl)
+  var res = 0
+  for (let i = 0; i < cl.length; i++) {
+    if (cl[i] === '1') {
+      res++
     }
-    var bl = b.length;
-    var sl = s.length;
-    var cl = b.slice(0, bl-sl);
-    var cr = b.slice(bl-sl, bl);
-    var res = 0;
-    for(var i=0;i<cl.length;i++){
-        if(cl[i]=='1'){
-            res++;
-        }
+  }
+  for (let i = 0; i < cr.length; i++) {
+    if (cr[i] !== s[i]) {
+      res++
     }
-    for(var i=0;i<cr.length;i++){
-        if(cr[i]!=s[i]){
-            res++;
-        }
-    }
-    return res;
-};
+  }
+  return res
+}
 
-console.log(hammingDistance(1,4));
+console.log(hammingDistance(1, 4))
