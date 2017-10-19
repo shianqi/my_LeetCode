@@ -24,7 +24,7 @@ var titleToNumber = function (s) {
   var num = 0
   for (var i = s.length - 1; i >= 0; i--) {
     var value = s.charCodeAt(i) - 64
-    var weightedValue = value * Math.pow(26, s.length - i -1)
+    var weightedValue = value * Math.pow(26, s.length - i - 1)
     num += weightedValue
   }
   return num
